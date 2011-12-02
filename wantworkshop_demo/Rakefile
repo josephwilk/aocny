@@ -1,0 +1,11 @@
+#!/usr/bin/env rake
+# Add your own tasks in files placed in lib/tasks ending in .rake,
+# for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
+
+require File.expand_path('../config/application', __FILE__)
+
+Wantworkshop::Application.load_tasks
+
+Rake.application['default'].clear_prerequisites if Rake.application['default']
+
+task :default => ['spec', 'cucumber']

@@ -1,0 +1,10 @@
+<%- if flash[:error].present? %>
+  <%= flash[:error] %>
+<%- end %>
+
+<form action="/wants" method="post">
+	<input type="hidden" name="workshop_id" value="<%= @workshop.id %>">
+	<label for="email">Email</label></span>
+    <input type="email" name="email" id="email-input"></input>
+    <input type="submit" value="want"/></li>
+</form>

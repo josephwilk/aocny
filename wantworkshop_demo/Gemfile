@@ -1,0 +1,17 @@
+source 'http://rubygems.org'
+
+gem 'rails', '3.1.1'
+gem 'sqlite3'
+
+group :test, :development do
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'cucumber-rails'
+  gem 'factory_girl'
+  gem 'capybara'
+  gem 'database_cleaner'
+  # Pretty printed test output
+  gem 'ruby-debug19', :require => 'ruby-debug'
+  gem 'guard-cucumber'
+  gem 'growl_notify'
+end

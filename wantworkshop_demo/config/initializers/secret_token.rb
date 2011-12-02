@@ -1,0 +1,1 @@
+Wantworkshop::Application.config.secret_token = '475974ac4053040849240e36443029b0'
