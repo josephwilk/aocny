@@ -30,6 +30,7 @@ module DSL
     
     class CashMachineAutomator
       include Capybara::DSL
+      include Capybara::RSpecMatchers
       
       def initialize(app)
         @app = app
@@ -40,13 +41,13 @@ module DSL
       end
       
       def withdraw(cash_amount)
-        visit "/withdraw"
+        visit "/"
         fill_in :amount, :with => cash_amount
-        click 'Withdraw'
+        click_button 'Withdraw'
       end
       
       def balance
-        page.should have_text(@account.balance)
+        page =~ /#{@account.balance}/
       end
     end
 
